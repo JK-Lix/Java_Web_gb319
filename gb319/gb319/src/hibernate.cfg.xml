@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		
+		
+		
+		
+<!--指定连接数据库用的驱动，对于不同的关系数据库，其驱动是不同的，需要根据实际情况修改。  -->
+<property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
+
+<!--  指定连接数据库的路径，对于不同的关系数据库，其URL路径是不同的，需要根据实际情况修改。-->
+<property name="hibernate.connection.url">jdbc:jtds:sqlserver://127.0.0.1:1433;DatabaseName=shujuku_db</property>
+
+<!--  指定连接数据库的用户名和密码。-->
+<property name="hibernate.connection.username">warehouse</property>
+
+<property name="hibernate.connection.password">19970916</property>
+
+
+		
+		 <!-- Echo all executed SQL to stdout -->
+	  
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+	
+		
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+		
+		
+		  <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+		 
+		 <!-- 数据库没有改表的情况下可以自动生成 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		
+
+		<mapping class="com.model.User"/>
+		
+		<mapping class="com.model.Leibie"/>
+		
+		<mapping class="com.model.Caipin"/>
+		
+		<mapping class="com.model.Canting"/>
+		
+		<mapping class="com.model.Gouwuche"/>
+		
+		<mapping class="com.model.Dingdan"/>
+		
+		<mapping class="com.model.Peisong"/>
+		
+		
+		
+	</session-factory>
+</hibernate-configuration>
